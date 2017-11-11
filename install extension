@@ -1,0 +1,19 @@
+import pip
+import selenium
+import os
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
+
+
+# Step1: install extention
+
+executable_path="/Users/yanyan/Downloads/chromedriver"
+os.environ["webdriver.chrome.driver"] = executable_path
+chrome_options = Options()
+chrome_options.add_extension('/Users/yanyan/Downloads/extensionsamples/extension_1_0_7.crx')
+driver = webdriver.Chrome(executable_path=executable_path, chrome_options=chrome_options)
+driver.get("http://www.otto.de")
