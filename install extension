@@ -14,6 +14,9 @@ from selenium.webdriver.chrome.options import Options
 executable_path="/Users/yanyan/Downloads/chromedriver"
 os.environ["webdriver.chrome.driver"] = executable_path
 chrome_options = Options()
+
+#download the crx format file according to this source
+#https://stackoverflow.com/questions/7184793/how-to-download-a-crx-file-from-the-chrome-web-store-for-a-given-id
 chrome_options.add_extension('/Users/yanyan/Downloads/extensionsamples/extension_1_0_7.crx')
 driver = webdriver.Chrome(executable_path=executable_path, chrome_options=chrome_options)
 driver.get("http://www.otto.de")
