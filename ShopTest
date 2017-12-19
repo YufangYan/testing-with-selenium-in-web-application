@@ -1,0 +1,170 @@
+import pip
+import os
+import time
+import selenium
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
+
+"""
+################################            chrome          #########################################
+executable_path="C:/Users/Test/AppData/Local/Programs/Python/Python36-32/chromedriver"
+########download the crx format file according to this source
+#https://stackoverflow.com/questions/7184793/how-to-download-a-crx-file-from-the-chrome-web-store-for-a-given-id
+os.environ["webdriver.chrome.driver"] = executable_path
+chrome_options = Options()
+chrome_options.add_extension('C:/Users/Test/Downloads/Inhouse_extensions/chrome/offersolymp.crx')
+#chrome_options.add_extension('C:/Users/Test/Downloads/Inhouse_extensions/chrome/greatdealz.crx')
+#chrome_options.add_extension('C:/Users/Test/Downloads/Inhouse_extensions/chrome/lottadeals.crx')
+#chrome_options.add_extension('C:/Users/Test/Downloads/Inhouse_extensions/chrome/buywizard.crx')
+#chrome_options.add_extension('C:/Users/Test/Downloads/Inhouse_extensions/chrome/dealsolymp.crx')
+#chrome_options.add_extension('C:/Users/Test/Downloads/Inhouse_extensions/chrome/easytraveltab.crx')
+#chrome_options.add_extension('C:/Users/Test/Downloads/Inhouse_extensions/chrome/mysecretsearch.crx')
+#chrome_options.add_extension('C:/Users/Test/Downloads/Inhouse_extensions/chrome/realonlineradio.crx')
+#chrome_options.add_extension('C:/Users/Test/Downloads/Inhouse_extensions/chrome/searchanonymo.crx')
+#chrome_options.add_extension('C:/Users/Test/Downloads/Inhouse_extensions/chrome/walletdealer.crx')
+#chrome_options.add_extension('C:/Users/Test/Downloads/Inhouse_extensions/chrome/walletprotector.crx')
+#chrome_options.add_extension('C:/Users/Test/Downloads/Inhouse_extensions/chrome/weatherhubpro.crx')
+driver = webdriver.Chrome(executable_path=executable_path, chrome_options=chrome_options)
+"""
+
+############################# ##            firefox          ##########################################
+fp=webdriver.FirefoxProfile()
+#executable_path = "C:/Users/Test/AppData/Local/Programs/Python/Python36-32/geckodriver"
+#fp.add_extension('C:/Users/Test/Downloads/Inhouse_extensions/firefox/{greatdealz-0.0.6}.xpi')
+#fp.set_preference("extensions.adblockplus.currentVersion", "0.0.6")
+
+# Here "2" stands for "Automatic Proxy Configuration"
+#fp.set_preference("network.proxy.type", 2)
+#fp.set_preference("network.proxy.autoconfig_url","http://proxy-address-here:8080/")
+
+fp.set_preference("executable_path","C:/Users/Test/AppData/Local/Programs/Python/Python36-32/geckodriver")
+driver = webdriver.Firefox(firefox_profile=fp)
+########################################################################################################
+
+#US
+#driver.get("https://addons.mozilla.org/de/firefox/addon/greatdealzof/"); time.sleep(100)
+#driver.get("https://addons.mozilla.org/de/firefox/addon/lottadeals/"); time.sleep(100)
+driver.get("https://addons.mozilla.org/de/firefox/addon/offersolymp/"); time.sleep(30)
+#driver.get("https://addons.mozilla.org/de/firefox/addon/buywizard/"); time.sleep(100)
+#driver.get("https://addons.mozilla.org/de/firefox/addon/walletdealer/"); time.sleep(100)
+#driver.get("https://addons.mozilla.org/de/firefox/addon/wallet-protector/"); time.sleep(100)
+#driver.get("http://www.searchanonymo.com/"); time.sleep(100)
+##########################################################################################################
+'''
+driver.execute_script("window.open('https://www.checkintocash.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.marksandspencer.com/webapp');"); time.sleep(30)
+driver.execute_script("window.open('https://www.hotels.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.orbitz.com');"); time.sleep(30)
+driver.execute_script("window.open('https://shop.guess.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.mead.com/cart/');"); time.sleep(30)
+driver.execute_script("window.open('https://shop.advanceautoparts.com');"); time.sleep(30)
+driver.execute_script("window.open('https://katespade.com/shopping-bag');"); time.sleep(30)
+driver.execute_script("window.open('https://aeropostale.com/cart');"); time.sleep(30)
+driver.execute_script("window.open('https://www.lechateau.com/style/cart/cart.jsp.');"); time.sleep(30)
+#
+driver.execute_script("window.open('https://www.roxy.com/cart');"); time.sleep(30)
+driver.execute_script("window.open('https://www.udans.com/cart');"); time.sleep(30)
+driver.execute_script("window.open('https://www.petco.com/shop/OrderItemDisplay');"); time.sleep(30)
+driver.execute_script("window.open('https://www.bloomberg.com/businessweek');"); time.sleep(30)
+driver.execute_script("window.open('https://www.ptc.com/CheckoutShoppingCart');"); time.sleep(30)
+driver.execute_script("window.open('https://www.dcshoes.com/cart');"); time.sleep(30)
+driver.execute_script("window.open('https://www.kiehls.com/cart');"); time.sleep(30)
+'''
+
+'''
+#problemtic: driver.execute_script("window.open('https://secure.piriform.com');"); time.sleep(30)
+#problemtic:driver.execute_script("window.open('https://itunes.apple.com');"); time.sleep(30)
+#driver.execute_script("window.open('https://www.ae.com/cart');"); time.sleep(30)
+#
+driver.execute_script("window.open('https://shop.siriusxm.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.travelocity.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.bookingbuddy.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.tripadvisor.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.eharmony.com');"); time.sleep(30)
+driver.execute_script("window.open('http://www.hayneedle.com');"); time.sleep(30)
+driver.execute_script("window.open('http://www.basspro.com');"); time.sleep(30)
+driver.execute_script("window.open('http://www.stdcheck.com');"); time.sleep(30)
+driver.execute_script("window.open('http://www.hostgator.com');"); time.sleep(30)
+driver.execute_script("window.open('http://www.fedex.com');"); time.sleep(30)
+#
+driver.execute_script("window.open('http://www.bloomingdale.com');"); time.sleep(30)
+driver.execute_script("window.open('http://www.lyft.com');"); time.sleep(30)
+driver.execute_script("window.open('http://www.macys.com');"); time.sleep(30)
+driver.execute_script("window.open('http://www.lifelock.com');"); time.sleep(30)
+driver.execute_script("window.open('http://www.avg.com');"); time.sleep(30)
+driver.execute_script("window.open('http://www.choicehotels.com');"); time.sleep(30)
+driver.execute_script("window.open('http://www.chegg.com');"); time.sleep(30)
+driver.execute_script("window.open('http://www.quibids.com');"); time.sleep(30)
+driver.execute_script("window.open('http://www.shutterstock.com');"); time.sleep(30)
+driver.execute_script("window.open('http://www.trade-i.vzw.com');"); time.sleep(30)
+#
+driver.execute_script("window.open('https://www.otel.com/checkout');"); time.sleep(30)
+driver.execute_script("window.open('http://www.verizonwireless.com');"); time.sleep(30)
+driver.execute_script("window.open('http://www.bagsandbowsonline.com');"); time.sleep(30)
+driver.execute_script("window.open('http://www.barcelo.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.cabelas.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.straightalk.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.pch.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.samsung.com');"); time.sleep(30)
+#
+driver.execute_script("window.open('http://www.vrbo.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.walmart.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.greenscreenwizard.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.kohls.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.jcpenney.com');");time.sleep(30)
+driver.execute_script("window.open('https://www.aliexpress.com');");time.sleep(30)
+driver.execute_script("window.open('https://www.shutterfly.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.backcountry.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.officedepot.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.fairyseason.com');"); time.sleep(30)
+#
+driver.execute_script("window.open('https://www.qvc.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.ancestry.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.tophatter.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.woot.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.microsoft.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.priceline.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.justfly.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.groupon.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.cheapoair.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.libertymutual.com');"); time.sleep(30)
+#
+driver.execute_script("window.open('https://www.seatgeek.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.quill.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.walgeens.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.sportsmansguide.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.glassesusa.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.samsclub.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.belk.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.pepboys.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.lendingtree.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.6pm.com');"); time.sleep(30)
+#
+driver.execute_script("window.open('https://www.fanatics.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.cyberlink.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.staples.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.dylanscandybar.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.overstock.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.homeaway.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.mlbshop.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.enigmasoftware.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.repairclinic.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.puritan.com');"); time.sleep(30)
+#
+driver.execute_script("window.open('https://www.dia.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.partsgeek.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.firstchoicepower.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.udemy.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.birchbox.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.23andme.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.nordstromrack.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.hottopic.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.shoes.com');"); time.sleep(30)
+driver.execute_script("window.open('https://www.hp.com');"); time.sleep(30)
+'''
+
